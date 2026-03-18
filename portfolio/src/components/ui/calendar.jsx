@@ -5,7 +5,7 @@ import { DayPicker } from "react-day-picker"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
-function Calendario({
+function Calendar({
   className,
   classNames,
   showOutsideDays = true,
@@ -66,6 +66,6 @@ function Calendario({
       {...props} />)
   );
 }
-Calendario.displayName = "Calendario"
+Calendar.displayName = "Calendar"
 
-export { Calendario }
+export { Calendar }

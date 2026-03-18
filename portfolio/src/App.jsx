@@ -1,11 +1,13 @@
-import { Toaster } from "./components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
-import { queryClientInstance } from './lib/query-client'
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
-import PageNotFound from './lib/PageNotFound'
-import { AuthProvider, useAuth } from './lib/AuthContext'
+import { queryClientInstance } from '@/lib/query-client'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PageNotFound from './lib/PageNotFound';
+import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
-import Portfolio from './pages/Portfolio'
+import Portfolio from '@/pages/Portfolio';
+import ProjectDetail from '@/pages/ProjectDetail';
+import { Navigate } from 'react-router-dom';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -35,6 +37,7 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<Navigate to="/Portfolio" replace />} />
       <Route path="/Portfolio" element={<Portfolio />} />
+      <Route path="/Project/:id" element={<ProjectDetail />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

@@ -1,4 +1,4 @@
-import ProjectsCarousel from "./ProjectsCarousel";
+import ProjectsCarousel from "./ProjectCarousel";
 
 // EDITE AQUI: Adicione seus projetos
 export const PROJECTS = [
