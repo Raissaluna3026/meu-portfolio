@@ -16,7 +16,7 @@ export default function HeroSection() {
 
           {/* Name */}
           <h1 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
-            &gt; 🎲 Raissa Luna
+            &gt; Raissa Luna
           </h1>
 
           {/* Role */}
