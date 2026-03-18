@@ -11,12 +11,12 @@ export default function HeroSection() {
           {/* Status line */}
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <span className="w-2 h-2 bg-green-400 inline-block" />
-            <span>disponível para oportunidades</span>
+            <span>Dados não contam histórias. Eu conto por eles.</span>
           </div>
 
           {/* Name */}
           <h1 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
-            &gt; Seu Nome
+            &gt; Raissa Luna
           </h1>
 
           {/* Role */}
