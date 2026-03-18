@@ -3,9 +3,9 @@ import WindowCard from "./WindowCard";
 import { Mail, Github, Linkedin } from "lucide-react";
 
 const LINKS = [
-  { icon: Mail, label: "email", value: "seu@email.com", href: "mailto:seu@email.com" },
-  { icon: Github, label: "github", value: "/seu-github", href: "https://github.com" },
-  { icon: Linkedin, label: "linkedin", value: "/seu-linkedin", href: "https://linkedin.com" },
+  { icon: Mail, label: "email", value: "raissalunana@gmail.com", href: "mailto:seu@email.com" },
+  { icon: Github, label: "github", value: "/raissaluna", href: "https://github.com/Raissaluna3026" },
+  { icon: Linkedin, label: "linkedin", value: "/raissaluna-linkedin", href: "https://www.linkedin.com/in/raissa-luna-a0292b1a0/" },
 ];
 
 export default function ContactSection() {
@@ -30,9 +30,8 @@ export default function ContactSection() {
               <span className="text-primary">~$</span> echo "Vamos conversar?"
             </div>
             <p className="text-sm text-foreground">
-              Vamos conversar? Estou aberta a novas oportunidades e colaborações.
             </p>
-
+    
             {/* Links */}
             <div className="space-y-2 pt-2">
               {LINKS.map((link, i) => {
@@ -63,7 +62,7 @@ export default function ContactSection() {
             <div className="border-t border-border pt-3 mt-4">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="w-2 h-2 bg-green-400 inline-block" />
-                status: disponível para oportunidades
+                status: disponível
               </div>
             </div>
           </div>

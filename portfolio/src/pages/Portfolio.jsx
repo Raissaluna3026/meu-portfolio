@@ -34,7 +34,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="border-t-2 border-border py-6 text-center mb-12">
         <p className="text-xs text-muted-foreground">
-          © 2026 — feito com <span className="text-primary">♦</span> e código
+          © 2026 —  raissa luna <span className="text-primary">♦</span>
         </p>
       </footer>
 
