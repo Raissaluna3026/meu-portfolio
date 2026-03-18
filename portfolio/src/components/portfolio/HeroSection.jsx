@@ -11,7 +11,7 @@ export default function HeroSection() {
           {/* Status line */}
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <span className="w-2 h-2 bg-green-400 inline-block" />
-            <span>Dados não contam histórias. Eu conto por eles.</span>
+            <span>testando.</span>
           </div>
 
           {/* Name */}
