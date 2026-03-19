@@ -89,10 +89,32 @@ export default function ProjectDetail() {
             <div className="space-y-4">
               <div>
                 <h3 className="text-sm font-semibold text-foreground mb-2">Sobre o projeto</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                   {project.fullDescription}
                 </p>
               </div>
+
+              {(project.howItWasDoneTitle || project.howItWasDoneText || project.howItWasDoneImage) && (
+                <div className="border-t border-border pt-4 space-y-3">
+                  {project.howItWasDoneTitle && (
+                    <h3 className="text-sm font-semibold text-foreground">{project.howItWasDoneTitle}</h3>
+                  )}
+
+                  {project.howItWasDoneText && (
+                    <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {project.howItWasDoneText}
+                    </p>
+                  )}
+
+                  {project.howItWasDoneImage && (
+                    <img
+                      src={project.howItWasDoneImage}
+                      alt={`${project.name} - diagrama de criação`}
+                      className="w-full h-auto border-2 border-border"
+                    />
+                  )}
+                </div>
+              )}
 
               {project.features && (
                 <div className="border-t border-border pt-4">
