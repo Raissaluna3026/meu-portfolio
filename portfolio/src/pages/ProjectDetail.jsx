@@ -94,7 +94,7 @@ export default function ProjectDetail() {
                 </p>
               </div>
 
-              {(project.howItWasDoneTitle || project.howItWasDoneText || project.howItWasDoneImage) && (
+              {(project.howItWasDoneTitle || project.howItWasDoneText) && (
                 <div className="border-t border-border pt-4 space-y-3">
                   {project.howItWasDoneTitle && (
                     <h3 className="text-sm font-semibold text-foreground">{project.howItWasDoneTitle}</h3>
@@ -103,6 +103,20 @@ export default function ProjectDetail() {
                   {project.howItWasDoneText && (
                     <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                       {project.howItWasDoneText}
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {(project.etlProcess || project.textETL) && (
+                <div className="border-t border-border pt-4 space-y-3">
+                  {project.etlProcess && (
+                    <h3 className="text-sm font-semibold text-foreground">{project.etlProcess}</h3>
+                  )}
+
+                  {project.textETL && (
+                    <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {project.textETL}
                     </p>
                   )}
 
