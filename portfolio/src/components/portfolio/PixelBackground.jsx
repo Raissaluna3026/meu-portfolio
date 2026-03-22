@@ -1,9 +1,36 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 const STAR_COUNT = 40;
+const SHAPE_COUNT = 22;
 
 export default function PixelBackground() {
   const starsRef = useRef(null);
+  const shapes = useMemo(
+    () =>
+      Array.from({ length: SHAPE_COUNT }).map((_, i) => {
+        const size = 16 + Math.random() * 36;
+        const duration = 18 + Math.random() * 26;
+        const delay = -Math.random() * 20;
+        const top = 8 + Math.random() * 80;
+        const opacity = 0.16 + Math.random() * 0.2;
+        const travel = 28 + Math.random() * 25;
+        const rotate = Math.random() * 360;
+        const variant = i % 3;
+
+        return {
+          id: i,
+          size,
+          duration,
+          delay,
+          top,
+          opacity,
+          travel,
+          rotate,
+          variant,
+        };
+      }),
+    []
+  );
 
   useEffect(() => {
     if (!starsRef.current) return;
@@ -60,6 +87,27 @@ export default function PixelBackground() {
       </div>
       <div className="absolute bottom-[35%] right-[15%] opacity-[0.03]">
         <PixelCloud width={80} />
+      </div>
+
+      {/* Floating geometric shapes */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
+        {shapes.map((shape) => (
+          <div
+            key={shape.id}
+            className={`moving-shape shape-${shape.variant}`}
+            style={{
+              width: `${shape.size}px`,
+              height: `${shape.size}px`,
+              top: `${shape.top}%`,
+              left: `-${shape.size + 24}px`,
+              opacity: shape.opacity,
+              animationDuration: `${shape.duration}s`,
+              animationDelay: `${shape.delay}s`,
+              ["--travel-vh"]: `${shape.travel}vh`,
+              ["--base-rotate"]: `${shape.rotate}deg`,
+            }}
+          />
+        ))}
       </div>
     </div>
   );

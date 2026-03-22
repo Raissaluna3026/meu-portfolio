@@ -155,3 +155,53 @@
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
 }
+
+/* Background moving geometry */
+@keyframes drift-across {
+  0% {
+    transform: translateX(0) translateY(0) rotate(var(--base-rotate));
+  }
+  50% {
+    transform: translateX(55vw) translateY(calc(var(--travel-vh) * -0.5)) rotate(calc(var(--base-rotate) + 180deg));
+  }
+  100% {
+    transform: translateX(115vw) translateY(calc(var(--travel-vh) * -1)) rotate(calc(var(--base-rotate) + 360deg));
+  }
+}
+
+.moving-shape {
+  position: absolute;
+  border: 2px solid hsl(190 85% 55% / 0.72);
+  background: hsl(190 85% 55% / 0.18);
+  box-shadow: 0 0 22px hsl(190 85% 55% / 0.28);
+  image-rendering: pixelated;
+  animation-name: drift-across;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+  filter: saturate(1.2);
+}
+
+.shape-0 {
+  border-radius: 2px;
+}
+
+.shape-1 {
+  border-radius: 9999px;
+  background: hsl(270 50% 60% / 0.2);
+  border-color: hsl(270 50% 60% / 0.7);
+  box-shadow: 0 0 24px hsl(270 50% 60% / 0.28);
+}
+
+.shape-2 {
+  border-radius: 1px;
+  background: hsl(160 70% 45% / 0.18);
+  border-color: hsl(160 70% 45% / 0.65);
+  box-shadow: 0 0 20px hsl(160 70% 45% / 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moving-shape {
+    animation: none;
+  }
+}
