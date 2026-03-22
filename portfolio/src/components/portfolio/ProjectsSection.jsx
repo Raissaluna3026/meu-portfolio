@@ -4,7 +4,7 @@ import ProjectsCarousel from "./ProjectCarousel";
 export const PROJECTS = [
   {
     id: "dashboard-vendas",
-    file: "dashboard_vendas.pbix",
+    file: "dashboard_whatif.pbix",
     name: "Dashboard Financeiro",
     description: "Dashboard financeiro com monitoramento de KPIs e fluxo de caixa, incluindo simulador what-if para análise de cenários e apoio à tomada de decisão.",
     tech: ["Power BI", "SQL", "DAX"],
@@ -36,8 +36,8 @@ export const PROJECTS = [
     file: "RPA_ETL.py",
     name: "ANP - Bot de Preços Gasolina",
     description: "Bot que coleta dados da ANP, trata as informações e envia, via WhatsApp, os postos com gasolina mais barata em Salvador.",
-    tech: ["Python", "Pandas", "SQL", "Apache Airflow"],
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80",
+    tech: ["Python", "Selenium", "SQL"],
+    image: "/rpa.jpg",
     imageAfterDescription: false,
     fullDescription: "Este projeto automatiza a busca pelos postos de gasolina com os menores preços em Salvador, utilizando dados públicos da ANP. O processo é totalmente automatizado: um script em Python monitora o site da ANP e baixa automaticamente o arquivo mais recente assim que há atualização.\n\nOs dados passam por tratamento e padronização para garantir consistência e são filtrados para identificar os menores preços por região. Em seguida, as informações são enviadas automaticamente para um grupo no WhatsApp utilizando a biblioteca Selenium, garantindo que os usuários recebam alertas precisos e em tempo real.\n\nO agendamento semanal faz com que toda a rotina, coleta, tratamento e envio da mensagem, ocorra sem intervenção manual, tornando o sistema eficiente e confiável. Para que isso funcione corretamente, o computador precisa estar ligado no horário programado. Uma alternativa seria hospedar o bot em servidores virtuais ou utilizar serviços de automação em nuvem, permitindo que ele rode 24/7 sem interrupções, mas isso não foi implementado neste projeto por questões de custo.",
     features: [
@@ -53,11 +53,11 @@ export const PROJECTS = [
   },
   {
     id: "relatorio-financeiro",
-    file: "relatorio_financeiro.pbix",
-    name: "Relatório Financeiro",
-    description: "Relatório executivo com análise de receitas, despesas e projeções financeiras.",
+    file: "dashboard_ranking.pbix",
+    name: "Dashboard de Faturamento + Ranking",
+    description: "Dashboard para análise de resultados, produtividade e ranking de desempenho comercial ao longo do tempo.",
     tech: ["Power BI", "SQL Server", "DAX"],
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
+    //image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
     fullDescription: "Relatório financeiro executivo com análise detalhada de receitas, despesas, fluxo de caixa e projeções.",
     features: [
       "Análise de receitas e despesas",
@@ -68,14 +68,14 @@ export const PROJECTS = [
     images: [
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
     ],
-  },
+  }/*
   {
     id: "analise-rh",
     file: "analise_rh.py",
     name: "Análise de RH",
     description: "Análise de dados de recursos humanos com métricas de turnover, performance e satisfação.",
     tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+    //image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
     fullDescription: "Análise exploratória de dados de RH incluindo turnover, performance, satisfação e correlações.",
     features: [
       "Análise de turnover e retenção",
@@ -86,7 +86,7 @@ export const PROJECTS = [
     images: [
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
     ],
-  },
+  },*/
 ];
 
 export default function ProjectsSection() {

@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import { Folder, FileText, Mail, User } from "lucide-react";
+import { Folder, Mail } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Projetos", href: "#projetos", icon: Folder },
-  { label: "Formação", href: "#formacao", icon: FileText },
-  { label: "Sobre", href: "#sobre", icon: User },
   { label: "Contato", href: "#contato", icon: Mail },
 ];
 

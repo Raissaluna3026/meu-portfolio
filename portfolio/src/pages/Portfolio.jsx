@@ -5,7 +5,6 @@ import TaskbarNav from "../components/portfolio/TaskbarNav";
 import HeroSection from "../components/portfolio/HeroSection";
 import ProjectsSection from "../components/portfolio/ProjectsSection";
 import AcademicSection from "../components/portfolio/AcademicSection";
-import AboutSection from "../components/portfolio/AboutSection";
 import ContactSection from "../components/portfolio/ContactSection";
 
 export default function Portfolio() {
@@ -20,12 +19,10 @@ export default function Portfolio() {
         <div id="projetos">
           <ProjectsSection />
         </div>
-        <div id="formacao">
+        {/* Seção acadêmica comentada enquanto não há conteúdo */}
+        {/* <div id="formacao">
           <AcademicSection />
-        </div>
-        <div id="sobre">
-          <AboutSection />
-        </div>
+        </div> */}
         <div id="contato">
           <ContactSection />
         </div>

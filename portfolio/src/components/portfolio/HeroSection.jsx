@@ -11,7 +11,16 @@ export default function HeroSection() {
           {/* Status line */}
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <span className="w-2 h-2 bg-green-400 inline-block" />
-            <span>testando.</span>
+            <span>disponivel</span>
+          </div>
+
+          <div className="pt-1 flex justify-center">
+            <img
+              src="/eu.jpg"
+              alt="Foto de Raissa Luna"
+              className="w-36 h-36 md:w-44 md:h-44 object-cover border-2 border-primary/40 glow-subtle"
+              style={{ imageRendering: "auto" }}
+            />
           </div>
 
           {/* Name */}
@@ -34,7 +43,7 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Analista de Dados especializada em extração ETL e desenvolvimento de dashboards em BI. Transformo dados brutos em insights acionáveis usando Python, SQL e Power BI.
+            Analista de Dados especializada em extração ETL e desenvolvimento de dashboards em BI. 
           </p>
 
           {/* Terminal line */}
