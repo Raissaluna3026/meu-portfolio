@@ -9,11 +9,13 @@ export default function PixelBackground() {
     () =>
       Array.from({ length: SHAPE_COUNT }).map((_, i) => {
         const size = 16 + Math.random() * 36;
-        const duration = 18 + Math.random() * 26;
+        const duration = 9 + Math.random() * 8;
         const delay = -Math.random() * 20;
-        const top = 8 + Math.random() * 80;
-        const opacity = 0.16 + Math.random() * 0.2;
-        const travel = 28 + Math.random() * 25;
+        const top = 6 + Math.random() * 86;
+        const left = 4 + Math.random() * 90;
+        const opacity = 0.08 + Math.random() * 0.14;
+        const driftX = 140 + Math.random() * 220;
+        const driftY = -70 + Math.random() * 140;
         const rotate = Math.random() * 360;
         const variant = i % 3;
 
@@ -23,8 +25,10 @@ export default function PixelBackground() {
           duration,
           delay,
           top,
+          left,
           opacity,
-          travel,
+          driftX,
+          driftY,
           rotate,
           variant,
         };
@@ -99,11 +103,12 @@ export default function PixelBackground() {
               width: `${shape.size}px`,
               height: `${shape.size}px`,
               top: `${shape.top}%`,
-              left: `-${shape.size + 24}px`,
+              left: `${shape.left}%`,
               opacity: shape.opacity,
               animationDuration: `${shape.duration}s`,
               animationDelay: `${shape.delay}s`,
-              ["--travel-vh"]: `${shape.travel}vh`,
+              ["--drift-x"]: `${shape.driftX}px`,
+              ["--drift-y"]: `${shape.driftY}px`,
               ["--base-rotate"]: `${shape.rotate}deg`,
             }}
           />
