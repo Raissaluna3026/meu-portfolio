@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = PROJECTS.find((p) => p.id === id);
+  const showImagesAfterDescription = Boolean(project?.imageAfterDescription);
 
   if (!project) {
     return (
@@ -64,24 +65,26 @@ export default function ProjectDetail() {
         </WindowCard>
 
         {/* Project images */}
-        <div className="mt-6 space-y-6">
-          {project.images?.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <WindowCard title={`screenshot_${i + 1}.png`}>
-                <img
-                  src={img}
-                  alt={`${project.name} - imagem ${i + 1}`}
-                  className="w-full h-auto border-2 border-border"
-                />
-              </WindowCard>
-            </motion.div>
-          ))}
-        </div>
+        {!showImagesAfterDescription && (
+          <div className="mt-6 space-y-6">
+            {project.images?.map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <WindowCard title={`screenshot_${i + 1}.png`}>
+                  <img
+                    src={img}
+                    alt={`${project.name} - imagem ${i + 1}`}
+                    className="w-full h-auto border-2 border-border"
+                  />
+                </WindowCard>
+              </motion.div>
+            ))}
+          </div>
+        )}
 
         {/* Full description */}
         <div className="mt-6">
@@ -92,6 +95,19 @@ export default function ProjectDetail() {
                 <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                   {project.fullDescription}
                 </p>
+
+                {showImagesAfterDescription && project.images?.length > 0 && (
+                  <div className="mt-4 space-y-4">
+                    {project.images.map((img, i) => (
+                      <img
+                        key={i}
+                        src={img}
+                        alt={`${project.name} - imagem ${i + 1}`}
+                        className="w-full h-auto border-2 border-border"
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
 
               {(project.howItWasDoneTitle || project.howItWasDoneText) && (
@@ -146,6 +162,7 @@ export default function ProjectDetail() {
             </div>
           </WindowCard>
         </div>
+
       </div>
     </div>
   );

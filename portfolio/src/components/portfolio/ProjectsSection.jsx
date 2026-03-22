@@ -33,12 +33,13 @@ export const PROJECTS = [
   },
   {
     id: "pipeline-etl",
-    file: "etl_pipeline.py",
-    name: "Monitoramento de Preços de Combustível (ANP + WhatsApp)",
-    description: "Bot automatizado que coleta dados da ANP, trata as informações e envia, via WhatsApp, os postos com gasolina mais barata em Salvador.",
+    file: "RPA_ETL.py",
+    name: "ANP - Bot de Preços Gasolina",
+    description: "Bot que coleta dados da ANP, trata as informações e envia, via WhatsApp, os postos com gasolina mais barata em Salvador.",
     tech: ["Python", "Pandas", "SQL", "Apache Airflow"],
     image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80",
-    fullDescription: "A ideia do projeto foi automatizar a busca pelos postos com gasolina mais barata em Salvador, utilizando dados públicos da ANP. O processo começa com a coleta dos dados em CSV/Excel, seguido pelo tratamento e padronização das informações para garantir consistência. Em seguida, os dados são filtrados para identificar os menores preços por região. Por fim, as informações são enviadas automaticamente por meio de um bot no WhatsApp, permitindo acesso rápido e prático às melhores opções de abastecimento.",
+    imageAfterDescription: false,
+    fullDescription: "Este projeto automatiza a busca pelos postos de gasolina com os menores preços em Salvador, utilizando dados públicos da ANP. O processo é totalmente automatizado: um script em Python monitora o site da ANP e baixa automaticamente o arquivo mais recente assim que há atualização.\n\nOs dados passam por tratamento e padronização para garantir consistência e são filtrados para identificar os menores preços por região. Em seguida, as informações são enviadas automaticamente para um grupo no WhatsApp utilizando a biblioteca Selenium, garantindo que os usuários recebam alertas precisos e em tempo real.\n\nO agendamento semanal faz com que toda a rotina, coleta, tratamento e envio da mensagem, ocorra sem intervenção manual, tornando o sistema eficiente e confiável. Para que isso funcione corretamente, o computador precisa estar ligado no horário programado. Uma alternativa seria hospedar o bot em servidores virtuais ou utilizar serviços de automação em nuvem, permitindo que ele rode 24/7 sem interrupções, mas isso não foi implementado neste projeto por questões de custo.",
     features: [
       "Coleta automatizada de dados da ANP",
       "Tratamento e limpeza de dados (CSV/Excel)",
@@ -47,7 +48,7 @@ export const PROJECTS = [
       "Atualização periódica dos dados",
     ],
     images: [
-      "/projeto1/botgasolina.jpeg",
+      "/projeto1/botgasolina.png",
     ],
   },
   {

@@ -4,11 +4,13 @@ import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function ProjectCard({ project, index }) {
+  const showImageAfterDescription = Boolean(project.imageAfterDescription);
+
   return (
     <WindowCard title={project.file} delay={index * 0.1}>
       <div className="space-y-3">
         {/* Project image */}
-        {project.image && (
+        {project.image && !showImageAfterDescription && (
           <div className="w-full h-40 bg-secondary border-2 border-border overflow-hidden">
             <img
               src={project.image}
@@ -21,6 +23,17 @@ export default function ProjectCard({ project, index }) {
 
         <h3 className="text-base font-semibold text-foreground">{project.name}</h3>
         <p className="text-xs text-muted-foreground leading-relaxed">{project.description}</p>
+
+        {project.image && showImageAfterDescription && (
+          <div className="w-full h-40 bg-secondary border-2 border-border overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.name}
+              className="w-full h-full object-cover"
+              style={{ imageRendering: "pixelated" }}
+            />
+          </div>
+        )}
 
         {/* Tech tags */}
         <div className="flex flex-wrap gap-1.5">
