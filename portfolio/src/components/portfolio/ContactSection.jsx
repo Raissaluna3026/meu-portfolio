@@ -4,7 +4,7 @@ import { Mail, Github, Linkedin } from "lucide-react";
 
 const LINKS = [
   { icon: Mail, label: "email", value: "raissalunana@gmail.com", href: "mailto:seu@email.com" },
-  { icon: Github, label: "github", value: "/raissaluna", href: "https://github.com/Raissaluna3026" },
+  { icon: Github, label: "github", value: "/raissaluna", href: "https://github.com/rsluna-data" },
   { icon: Linkedin, label: "linkedin", value: "/raissaluna-linkedin", href: "https://www.linkedin.com/in/raissa-luna-a0292b1a0/" },
 ];
 
